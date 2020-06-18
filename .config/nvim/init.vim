@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
 " VIM enhancements
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 " GUI Enhancements
 Plug 'itchyny/lightline.vim'
@@ -28,6 +30,8 @@ Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
@@ -61,6 +65,12 @@ endif
 " Open hotkeys
 map <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
+
+" Git remaps
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+nmap <leader>gp :Gpush<CR>
 
 " Quick save
 nmap <leader>w :w<CR>
@@ -142,8 +152,6 @@ set shortmess+=c
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " Keyboard shortcuts
-nnoremap ; :
-
 inoremap <C-j> <Esc>
 
 nnoremap <C-k> <Esc>
