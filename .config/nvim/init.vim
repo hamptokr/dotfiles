@@ -6,14 +6,16 @@ call plug#begin('~/.vim/plugged')
 " Load plugins
 " VIM enhancements
 Plug 'editorconfig/editorconfig-vim'
-Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'wakatime/vim-wakatime'
 
 " GUI Enhancements
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " Fuzzy Finder
 Plug 'airblade/vim-rooter'
@@ -30,17 +32,20 @@ Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-editors/vim-elixir'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
+colorscheme gruvbox
 set background=dark
+let g:gruvbox_contrast_light='hard'
 syntax on
 
 " Lightline config
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -104,9 +109,9 @@ set splitbelow
 set undodir=~/.vimdid
 set undofile
 
-set shiftwidth=8
-set softtabstop=8
-set tabstop=8
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set noexpandtab
 
 set formatoptions=tc
