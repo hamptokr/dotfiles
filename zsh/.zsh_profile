@@ -1,0 +1,29 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+. $HOME/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
+export ERL_AFLAGS="-kernel shell_history enabled"
+export AWS_PROFILE=sts
+export POSTGRES_USER=kramer
+
+path+=($HOME/.asdf/installs/elixir/1.13.2-otp-24/.mix/escripts)
+path+=($HOME/.local/bin)
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

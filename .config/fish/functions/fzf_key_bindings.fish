@@ -1,1 +1,0 @@
-/home/khampton/.fzf/shell/key-bindings.fish
