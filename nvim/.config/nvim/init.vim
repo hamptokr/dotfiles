@@ -23,6 +23,10 @@ call plug#begin()
 	Plug 'airblade/vim-rooter'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'nvim-lua/lsp-status.nvim'
 call plug#end()
 
 lua require("hamptokr")
