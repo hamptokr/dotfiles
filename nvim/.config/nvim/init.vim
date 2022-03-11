@@ -31,6 +31,7 @@ call plug#end()
 
 lua require("hamptokr")
 lua require'nvim-treesitter.configs'.setup{ ensure_installed = "maintained", sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
+lua require('telescope').setup{ defaults = { preview = { treesitter = false }}}
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s <cmd>lua require("telescope.builtin").find_files{find_command = { "rg", "-i", "--hidden", "--files", "-g", "!.git" }}<CR>

@@ -62,6 +62,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+
+    vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
 end
 
 local function config(_config)
@@ -101,5 +103,13 @@ require("lspconfig").sumneko_lua.setup(config({
 }))
 
 require("lspconfig").elixirls.setup(config({
-  cmd = { "/Users/kramer/oss/elixir-ls/language_server.sh" };
+  cmd = { "/Users/kramer/oss/elixir-ls/language_server.sh" },
+  settings = {
+    elixirLS = {
+      filetypes = {"elixir", "eelixir"},
+      dialyzerEnabled = false,
+      fetchDeps = false,
+      enableTestLenses = true,
+    }
+  },
 }))
