@@ -21,6 +21,7 @@ call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
 	Plug 'airblade/vim-rooter'
+    Plug 'ThePrimeagen/git-worktree.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -32,6 +33,7 @@ call plug#end()
 lua require("hamptokr")
 lua require'nvim-treesitter.configs'.setup{ ensure_installed = "maintained", sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
 lua require('telescope').setup{ defaults = { preview = { treesitter = false }}}
+lua require('telescope').load_extension("git_worktree")
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s <cmd>lua require("telescope.builtin").find_files{find_command = { "rg", "-i", "--hidden", "--files", "-g", "!.git" }}<CR>
@@ -53,3 +55,9 @@ nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 
 inoremap <C-c> <esc>
+
+nnoremap <leader>ga :Git fetch --all<CR>
+
+nmap <leader>gs :G<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
