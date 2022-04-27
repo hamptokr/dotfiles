@@ -107,5 +107,7 @@ source $HOME/.zsh_profile
 # Enable VI
 bindkey -v
 
+export PATH="$PATH:/usr/local/protobuf/bin"
+
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
