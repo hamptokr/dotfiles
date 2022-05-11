@@ -31,7 +31,7 @@ call plug#begin()
 call plug#end()
 
 lua require("hamptokr")
-lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'c', 'rust', 'lua', 'elixir', 'eex', 'erlang', 'go', 'javascript'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
+lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'vim', 'c', 'rust', 'lua', 'elixir', 'eex', 'erlang', 'go', 'javascript'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
 lua require('telescope').setup{ defaults = { preview = { treesitter = false }}}
 lua require('telescope').load_extension("git_worktree")
 
