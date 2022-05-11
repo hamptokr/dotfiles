@@ -108,6 +108,7 @@ source $HOME/.zsh_profile
 bindkey -v
 
 export PATH="$PATH:/usr/local/protobuf/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"

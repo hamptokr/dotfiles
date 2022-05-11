@@ -1,46 +1,46 @@
 local cmp = require("cmp")
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-	  vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-    end,
-  },
-  mapping = {
-    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-	  i = cmp.mapping.abort(),
-	  c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping.select_next_item(),
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-  }, {
-    { name = 'buffer' },
-  })
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        end,
+    },
+    mapping = {
+        ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        ['<C-e>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' }, -- For vsnip users.
+    }, {
+        { name = 'buffer' },
+    })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
+    sources = {
+        { name = 'buffer' }
+    }
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
 })
 
 local lsp_status = require('lsp-status')
@@ -49,7 +49,7 @@ lsp_status.register_progress()
 local on_attach = function(client, bufnr)
     lsp_status.on_attach(client)
 
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap = true, silent = true }
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -67,10 +67,10 @@ local on_attach = function(client, bufnr)
 end
 
 local function config(_config)
-	return vim.tbl_deep_extend("force", {
+    return vim.tbl_deep_extend("force", {
         capabilities = lsp_status.capabilities,
         on_attach = on_attach,
-	}, _config or {})
+    }, _config or {})
 end
 
 local sumneko_runtime_path = vim.split(package.path, ';')
@@ -78,44 +78,44 @@ table.insert(sumneko_runtime_path, "lua/?.lua")
 table.insert(sumneko_runtime_path, "lua/?/init.lua")
 
 require("lspconfig").sumneko_lua.setup(config({
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = sumneko_runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+                -- Setup your lua path
+                path = sumneko_runtime_path,
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
     },
-  },
 }))
 
 require("lspconfig").elixirls.setup(config({
-  cmd = { "/Users/kramer/oss/elixir-ls/language_server.sh" },
-  settings = {
-    elixirLS = {
-      filetypes = {"elixir", "eelixir"},
-      dialyzerEnabled = false,
-      fetchDeps = false,
-      enableTestLenses = true,
-    }
-  },
+    cmd = { "/Users/kramer/oss/elixir-ls/language_server.sh" },
+    settings = {
+        elixirLS = {
+            filetypes = { "elixir", "eelixir" },
+            dialyzerEnabled = false,
+            fetchDeps = false,
+            enableTestLenses = true,
+        }
+    },
 }))
 
 require("lspconfig").rust_analyzer.setup({
-    on_attach=on_attach,
+    on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {
             assist = {
@@ -130,4 +130,8 @@ require("lspconfig").rust_analyzer.setup({
             },
         }
     }
+})
+
+require("lspconfig").gopls.setup({
+    on_attach = on_attach
 })
