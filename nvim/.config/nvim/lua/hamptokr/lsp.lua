@@ -135,3 +135,7 @@ require("lspconfig").rust_analyzer.setup({
 require("lspconfig").gopls.setup({
     on_attach = on_attach
 })
+
+require("lspconfig").tsserver.setup({
+    on_attach = on_attach
+})
