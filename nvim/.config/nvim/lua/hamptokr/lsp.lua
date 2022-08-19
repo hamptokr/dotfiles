@@ -57,7 +57,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl',
+        '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -102,8 +103,16 @@ require("lspconfig").sumneko_lua.setup(config({
     },
 }))
 
+local function elixirls_cmd()
+    if vim.loop.os_uname().sysname == "Darwin" then
+        return "/Users/kramer/oss/elixir-ls/language_server.sh"
+    else
+        return "/home/khampton/oss/elixir-ls/language_server.sh"
+    end
+end
+
 require("lspconfig").elixirls.setup(config({
-    cmd = { "/home/khampton/oss/elixir-ls/language_server.sh" },
+    cmd = { elixirls_cmd() },
     settings = {
         elixirLS = {
             filetypes = { "elixir", "eelixir" },
