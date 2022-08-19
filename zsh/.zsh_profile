@@ -21,7 +21,12 @@ export POSTGRES_USER=kramer
 path+=($HOME/.asdf/installs/elixir/1.13.2-otp-24/.mix/escripts)
 path+=($HOME/.local/bin)
 
+# Start TMUX
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####

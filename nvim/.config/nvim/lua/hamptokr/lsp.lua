@@ -103,7 +103,7 @@ require("lspconfig").sumneko_lua.setup(config({
 }))
 
 require("lspconfig").elixirls.setup(config({
-    cmd = { "/Users/kramer/oss/elixir-ls/language_server.sh" },
+    cmd = { "/home/khampton/oss/elixir-ls/language_server.sh" },
     settings = {
         elixirLS = {
             filetypes = { "elixir", "eelixir" },

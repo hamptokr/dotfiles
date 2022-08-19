@@ -28,15 +28,23 @@ call plug#begin()
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'nvim-lua/lsp-status.nvim'
+
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 lua require("hamptokr")
-lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'vim', 'c', 'rust', 'lua', 'elixir', 'eex', 'erlang', 'go', 'javascript'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
+lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'vim', 'c', 'rust', 'lua', 'elixir', 'eex', 'heex', 'erlang', 'go', 'javascript'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
 lua require('telescope').setup{ defaults = { preview = { treesitter = false }}}
 lua require('telescope').load_extension("git_worktree")
 
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s <cmd>lua require("telescope.builtin").find_files{find_command = { "rg", "-i", "--hidden", "--files", "-g", "!.git" }}<CR>
+nnoremap <leader>f <cmd>lua require("telescope.builtin").live_grep()<CR>
 nnoremap H ^
 nnoremap L $
 
