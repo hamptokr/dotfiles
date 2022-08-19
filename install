@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# You must call with `STOW_FOLDERS=nvim,kitty ./install`
 
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
