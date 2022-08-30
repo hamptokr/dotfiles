@@ -148,3 +148,7 @@ require("lspconfig").gopls.setup({
 require("lspconfig").tsserver.setup({
     on_attach = on_attach
 })
+
+require("lspconfig").emmet_ls.setup({
+    on_attach = on_attach
+})

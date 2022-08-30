@@ -24,6 +24,7 @@ call plug#begin()
     Plug 'ThePrimeagen/git-worktree.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
 
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
@@ -34,7 +35,7 @@ call plug#begin()
 call plug#end()
 
 lua require("hamptokr")
-lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'vim', 'c', 'rust', 'lua', 'elixir', 'eex', 'heex', 'erlang', 'go', 'javascript', 'typescript'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
+lua require'nvim-treesitter.configs'.setup{ ensure_installed = {'vim', 'c', 'rust', 'lua', 'elixir', 'eex', 'heex', 'erlang', 'go', 'javascript', 'typescript', 'prisma', 'tsx'}, sync_install = false, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true}}
 lua require('telescope').setup{ defaults = { preview = { treesitter = false }}}
 lua require('telescope').load_extension("git_worktree")
 
