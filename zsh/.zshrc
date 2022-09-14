@@ -110,6 +110,7 @@ bindkey -v
 export PATH="$PATH:/usr/local/protobuf/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
 
 # Fig post block. Keep at the bottom of this file.
 # . "$HOME/.fig/shell/zshrc.post.zsh"

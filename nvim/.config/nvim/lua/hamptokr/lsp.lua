@@ -65,6 +65,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 
     vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
+    vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
 end
 
 local function config(_config)
@@ -150,5 +151,9 @@ require("lspconfig").tsserver.setup({
 })
 
 require("lspconfig").emmet_ls.setup({
+    on_attach = on_attach
+})
+
+require("lspconfig").eslint.setup({
     on_attach = on_attach
 })

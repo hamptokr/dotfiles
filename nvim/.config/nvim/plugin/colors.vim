@@ -1,7 +1,9 @@
 set termguicolors
-set background=dark
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_invert_selection='0'
-colorscheme tokyonight
-hi normal guibg=000000
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+
+lua << EOF
+require("catppuccin").setup()
+EOF
+
+colorscheme catppuccin
 
