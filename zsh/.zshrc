@@ -117,13 +117,12 @@ export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
 # Fig post block. Keep at the bottom of this file.
 # . "$HOME/.fig/shell/zshrc.post.zsh"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # pnpm
 export PNPM_HOME="/Users/kramer/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# Start starship must be at end
-eval "$(starship init zsh)"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

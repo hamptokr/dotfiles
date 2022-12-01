@@ -20,6 +20,7 @@ export POSTGRES_USER=kramer
 
 path+=($HOME/.asdf/installs/elixir/1.13.2-otp-24/.mix/escripts)
 path+=($HOME/.local/bin)
+path+=($HOME/.asdf/installs/ruby/3.1.2/bin)
 
 # Start TMUX
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then

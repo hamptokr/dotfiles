@@ -192,3 +192,7 @@ require("lspconfig").emmet_ls.setup({
 require("lspconfig").eslint.setup({
     on_attach = on_attach
 })
+
+require("lspconfig").ruby_ls.setup({
+    on_attach = on_attach
+})
