@@ -33,6 +33,7 @@ call plug#begin()
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'xiyaowong/nvim-transparent'
 call plug#end()
 
 lua require("hamptokr")

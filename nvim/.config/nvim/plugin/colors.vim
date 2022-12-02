@@ -6,4 +6,6 @@ require("catppuccin").setup()
 EOF
 
 colorscheme catppuccin
+highlight Normal guibg=none
+highlight NonText guibg=none
 
