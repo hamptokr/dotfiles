@@ -34,6 +34,7 @@ call plug#begin()
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'editorconfig/editorconfig-vim'
     Plug 'xiyaowong/nvim-transparent'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 lua require("hamptokr")
