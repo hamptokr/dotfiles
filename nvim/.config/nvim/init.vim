@@ -47,6 +47,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" vim-go settings
+let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 1
+let g:go_gopls_enabled = 1
+
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s <cmd>lua require("telescope.builtin").find_files{find_command = { "rg", "-i", "--hidden", "--files", "-g", "!.git" }}<CR>
 nnoremap <leader>f <cmd>lua require("telescope.builtin").live_grep()<CR>
