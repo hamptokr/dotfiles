@@ -46,6 +46,8 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set splitbelow
+set splitright
 
 " vim-go settings
 let g:go_fmt_command = 'goimports'
@@ -57,6 +59,10 @@ nnoremap <leader>s <cmd>lua require("telescope.builtin").find_files{find_command
 nnoremap <leader>f <cmd>lua require("telescope.builtin").live_grep()<CR>
 nnoremap H ^
 nnoremap L $
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 nnoremap Y yg$
 
