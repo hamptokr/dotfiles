@@ -130,6 +130,9 @@ export TERM=xterm-256color
 export GOBIN="$HOME/go/bin"
 export GOPATH="$HOME/go"
 
+# Silence mac warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # path
 
 pathprepend() {
@@ -155,7 +158,7 @@ alias '?'=duck
 alias ls='ls -h --color=auto'
 alias diff='diff --color'
 
-_have vim && alias vi=vim
+_have nvim && alias vi=nvim
 . "$HOME/.cargo/env"
 
 # pnpm
@@ -164,6 +167,6 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # Start tmux at startup
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
-fi
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#  exec tmux new-session -A -s main
+#fi
