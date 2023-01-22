@@ -1,2 +1,2 @@
-require("hamptokr.remap")
 require("hamptokr.set")
+require("hamptokr.remap")
