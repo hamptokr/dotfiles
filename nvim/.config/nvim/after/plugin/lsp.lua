@@ -4,7 +4,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
     'tsserver',
     'eslint',
-    'sumneko_lua',
+    'lua_ls',
     'rust_analyzer',
     'elixirls'
 })
@@ -24,5 +24,15 @@ lsp.on_attach(function(client, bufnr)
 
     vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.format { async = false, timeout_ms = 2000 }")
 end)
+
+lsp.configure('elixirls', {
+    settings = {
+        elixirLS = {
+            dialyzerEnabled = false,
+            fetchDeps = false,
+            enableTestLenses = true
+        }
+    }
+})
 
 lsp.setup()
