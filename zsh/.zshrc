@@ -119,3 +119,8 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# opam configuration
+[[ ! -r /Users/kramer/.opam/opam-init/init.zsh ]] || source /Users/kramer/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[ -f "/Users/kramer/.ghcup/env" ] && source "/Users/kramer/.ghcup/env" # ghcup-env

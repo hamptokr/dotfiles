@@ -22,7 +22,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-    vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.format { async = false, timeout_ms = 2000 }")
 end)
 
 lsp.configure('elixirls', {
