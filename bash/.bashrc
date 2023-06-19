@@ -124,8 +124,8 @@ _have() { type "$1" &>/dev/null; }
 
 # env vars
 
-export EDITOR=vi
-export EDITOR_PREFIX=vi
+export EDITOR=nvim
+export EDITOR_PREFIX=nvim
 export TERM=xterm-256color
 export GOBIN="$HOME/go/bin"
 export GOPATH="$HOME/go"
@@ -165,6 +165,13 @@ _have nvim && alias vi=nvim
 export PNPM_HOME="/home/kramer/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
+KERL_BUILD_DOCS=yes
+KERL_INSTALL_HTMLDOCS=yes
+KERL_INSTALL_MANPAGES=yes
 
 # Start tmux at startup
 #if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
