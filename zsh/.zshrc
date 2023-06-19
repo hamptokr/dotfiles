@@ -123,6 +123,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 # erlang
 export PATH="/Users/kramer/.cache/rebar3/bin:$PATH"
 
+# zig
+export PATH="/Users/kramer/zig:$PATH"
+
 # opam configuration
 [[ ! -r /Users/kramer/.opam/opam-init/init.zsh ]] || source /Users/kramer/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
