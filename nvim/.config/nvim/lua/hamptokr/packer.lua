@@ -72,4 +72,6 @@ return require("packer").startup(function(use)
 			"hamptokr/draculapro",
 		},
 	})
+
+	use("simrat39/inlay-hints.nvim")
 end)

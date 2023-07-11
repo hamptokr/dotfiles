@@ -40,6 +40,9 @@ require("formatter").setup({
 			require("formatter.filetypes.go").gofmt,
 			require("formatter.filetypes.go").goimports,
 			require("formatter.filetypes.go").golines,
+        },
+		vue = {
+			require("formatter.filetypes.vue").prettier,
 		},
 	},
 })

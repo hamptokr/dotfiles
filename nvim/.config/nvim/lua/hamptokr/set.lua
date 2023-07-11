@@ -36,4 +36,5 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.g['prettier#autoformat'] = 1
+vim.g["prettier#autoformat"] = 1
+vim.g["rtp"] = "/Users/kramer/.opam/default/share/ocp-indent/vim"

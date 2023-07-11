@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -126,7 +128,13 @@ export PATH="/Users/kramer/.cache/rebar3/bin:$PATH"
 # zig
 export PATH="/Users/kramer/zig:$PATH"
 
+# php
+export PATH="/Users/kramer/.config/composer/vendor/bin:$PATH"
+
 # opam configuration
 [[ ! -r /Users/kramer/.opam/opam-init/init.zsh ]] || source /Users/kramer/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 [ -f "/Users/kramer/.ghcup/env" ] && source "/Users/kramer/.ghcup/env" # ghcup-env
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
