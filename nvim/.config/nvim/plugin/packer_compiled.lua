@@ -132,7 +132,7 @@ _G.packer_plugins = {
   },
   ["inlay-hints.nvim"] = {
     loaded = true,
-    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
+    path = "/home/kramer/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
     url = "https://github.com/simrat39/inlay-hints.nvim"
   },
   ["lsp-zero.nvim"] = {

@@ -173,7 +173,10 @@ KERL_BUILD_DOCS=yes
 KERL_INSTALL_HTMLDOCS=yes
 KERL_INSTALL_MANPAGES=yes
 
+# snap
+export PATH="/snap/bin:$PATH"
+
 # Start tmux at startup
-#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#  exec tmux new-session -A -s main
-#fi
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main
+fi
