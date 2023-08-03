@@ -47,15 +47,14 @@ ih.setup({
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'lua_ls',
-    'rust_analyzer',
-    'elixirls',
-    'gopls'
+	"tsserver",
+	"eslint",
+	"lua_ls",
+	"rust_analyzer",
+	"gopls",
 })
 
-lsp.on_attach(function(client, bufnr)
+local custom_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()
@@ -85,7 +84,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
-end)
+end
 
 lsp.configure("elixirls", {
 	settings = {
@@ -110,4 +109,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-lsp.setup()
+lsp.setup({ on_attach = custom_attach })
+
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+
+local lexical_config = {
+	filetypes = { "elixir", "eelixir" },
+	cmd = { "/Users/kramer/oss/lexical/_build/dev/rel/lexical/start_lexical.sh" },
+	settings = {},
+}
+
+if not configs.lexical then
+	configs.lexical = {
+		default_config = {
+			filetypes = lexical_config.filetypes,
+			cmd = lexical_config.cmd,
+			root_dir = function(fname)
+				return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+			end,
+			-- optional settings
+			settings = lexical_config.settings,
+		},
+	}
+end
+
+lspconfig.lexical.setup({ on_attach = custom_attach })

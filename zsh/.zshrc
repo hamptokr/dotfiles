@@ -124,6 +124,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # erlang
 export PATH="/Users/kramer/.cache/rebar3/bin:$PATH"
+export KERL_BUILD_DOCS=yes
+export KERL_INSTALL_HTMLDOCS=yes
+export KERL_INSTALL_MANPAGES=yes
 
 # zig
 export PATH="/Users/kramer/zig:$PATH"
