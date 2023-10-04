@@ -116,7 +116,7 @@ local configs = require("lspconfig.configs")
 
 local lexical_config = {
 	filetypes = { "elixir", "eelixir" },
-	cmd = { "/Users/kramer/oss/lexical/_build/dev/rel/lexical/start_lexical.sh" },
+	cmd = { "/Users/kramer/oss/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
 	settings = {},
 }
 

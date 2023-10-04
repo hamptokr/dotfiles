@@ -49,29 +49,6 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("git@github.com:hamptokr/draculapro.git")
-
-	use({
-		"maxmx03/dracula.nvim",
-		config = function()
-			local dracula = require("dracula")
-			local draculapro = require("draculapro")
-
-			draculapro.setup({
-				theme = "pro",
-			})
-
-			dracula.setup({
-				dracula_pro = draculapro,
-				colors = draculapro.colors,
-			})
-
-			vim.cmd.colorscheme("dracula")
-		end,
-		dependencies = {
-			"hamptokr/draculapro",
-		},
-	})
-
+	use("shaunsingh/nord.nvim")
 	use("simrat39/inlay-hints.nvim")
 end)

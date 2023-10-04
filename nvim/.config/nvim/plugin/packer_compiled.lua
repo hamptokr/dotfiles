@@ -104,17 +104,6 @@ _G.packer_plugins = {
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dracula.nvim"] = {
-    config = { "\27LJ\2\n³\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0015\4\4\0B\2\2\0019\2\3\0005\4\5\0=\1\6\0049\5\a\1=\5\a\4B\2\2\0016\2\b\0009\2\t\0029\2\n\2'\4\1\0B\2\2\1K\0\1\0\16colorscheme\bcmd\bvim\vcolors\16dracula_pro\1\0\0\1\0\1\ntheme\bpro\nsetup\15draculapro\fdracula\frequire\0" },
-    loaded = true,
-    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/dracula.nvim",
-    url = "https://github.com/maxmx03/dracula.nvim"
-  },
-  ["draculapro.git"] = {
-    loaded = true,
-    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/draculapro.git",
-    url = "git@github.com:hamptokr/draculapro"
-  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/formatter.nvim",
@@ -132,7 +121,7 @@ _G.packer_plugins = {
   },
   ["inlay-hints.nvim"] = {
     loaded = true,
-    path = "/home/kramer/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
+    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
     url = "https://github.com/simrat39/inlay-hints.nvim"
   },
   ["lsp-zero.nvim"] = {
@@ -149,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -198,10 +192,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: dracula.nvim
-time([[Config for dracula.nvim]], true)
-try_loadstring("\27LJ\2\n³\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0015\4\4\0B\2\2\0019\2\3\0005\4\5\0=\1\6\0049\5\a\1=\5\a\4B\2\2\0016\2\b\0009\2\t\0029\2\n\2'\4\1\0B\2\2\1K\0\1\0\16colorscheme\bcmd\bvim\vcolors\16dracula_pro\1\0\0\1\0\1\ntheme\bpro\nsetup\15draculapro\fdracula\frequire\0", "config", "dracula.nvim")
-time([[Config for dracula.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

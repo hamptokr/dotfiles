@@ -130,9 +130,13 @@ export KERL_INSTALL_MANPAGES=yes
 
 # zig
 export PATH="/Users/kramer/zig:$PATH"
+export PATH="/Users/kramer/oss/zls/zig-out/bin/:$PATH"
 
 # php
 export PATH="/Users/kramer/.config/composer/vendor/bin:$PATH"
+
+# elixir-ls
+export PATH="/Users/kramer/oss/elixir-ls/release:$PATH"
 
 # opam configuration
 [[ ! -r /Users/kramer/.opam/opam-init/init.zsh ]] || source /Users/kramer/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
