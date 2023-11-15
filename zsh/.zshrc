@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -104,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.zsh_profile
 
+alias vim="nvim"
+alias ls="exa"
+
 # Enable VI
 bindkey -v
 
@@ -111,9 +112,6 @@ export PATH="$PATH:/usr/local/protobuf/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
-
-# Fig post block. Keep at the bottom of this file.
-# . "$HOME/.fig/shell/zshrc.post.zsh"
 
 # pnpm
 export PNPM_HOME="/Users/kramer/Library/pnpm"
@@ -143,5 +141,7 @@ export PATH="/Users/kramer/oss/elixir-ls/release:$PATH"
 
 [ -f "/Users/kramer/.ghcup/env" ] && source "/Users/kramer/.ghcup/env" # ghcup-env
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/takuya.omp.json)"
+fi
+

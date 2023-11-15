@@ -22,6 +22,14 @@ return require("packer").startup(function(use)
 	use("mhartington/formatter.nvim")
 
 	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
+
+	use("echasnovski/mini.nvim")
+	use("echasnovski/mini.indentscope")
+
+	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
 		requires = {
@@ -44,6 +52,6 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("shaunsingh/nord.nvim")
+	use("craftzdog/solarized-osaka.nvim")
 	use("simrat39/inlay-hints.nvim")
 end)
