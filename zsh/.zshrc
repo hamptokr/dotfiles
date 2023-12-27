@@ -141,7 +141,11 @@ export PATH="/Users/kramer/oss/elixir-ls/release:$PATH"
 
 [ -f "/Users/kramer/.ghcup/env" ] && source "/Users/kramer/.ghcup/env" # ghcup-env
 
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/takuya.omp.json)"
-fi
+eval "$(~/bin/rtx activate zsh)"
 
+# bun completions
+[ -s "/Users/kramer/.bun/_bun" ] && source "/Users/kramer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
