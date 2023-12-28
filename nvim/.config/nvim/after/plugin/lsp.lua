@@ -47,3 +47,21 @@ require("mason-lspconfig").setup({
 		lsp.default_setup,
 	},
 })
+
+local cmp = require("cmp")
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+cmp.setup({
+	sources = {
+		{ name = "path" },
+		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
+	},
+	formatting = lsp.cmp_format(),
+	mapping = cmp.mapping.preset.insert({
+		["<S-TAB>"] = cmp.mapping.select_prev_item(cmp_select),
+		["<TAB>"] = cmp.mapping.select_next_item(cmp_select),
+		["<ENTER>"] = cmp.mapping.confirm({ select = true }),
+		["<C-Space>"] = cmp.mapping.complete(),
+	}),
+})
