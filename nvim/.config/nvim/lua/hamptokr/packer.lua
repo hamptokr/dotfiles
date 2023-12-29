@@ -54,5 +54,10 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("craftzdog/solarized-osaka.nvim")
+	use({
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup({ opts = { filter = "machine" } })
+		end,
+	})
 end)
