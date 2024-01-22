@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "monokai-pro"
+	color = color or "simple-dark"
 	vim.cmd.colorscheme(color)
 end
 

@@ -104,7 +104,7 @@ local config = {
 		-- Disable sections and component separators
 		component_separators = "",
 		section_separators = "",
-		theme = "monokai-pro",
+		theme = "16color",
 	},
 	sections = {
 		-- these are to remove the defaults

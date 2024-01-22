@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/kramer/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/kramer/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
+local package_path_str = "/Users/kramer/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/Users/kramer/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/kramer/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -144,12 +144,6 @@ _G.packer_plugins = {
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/mini.nvim",
     url = "https://github.com/echasnovski/mini.nvim"
   },
-  ["monokai-pro.nvim"] = {
-    config = { "\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vfilter\fmachine\nsetup\16monokai-pro\frequire\0" },
-    loaded = true,
-    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
-    url = "https://github.com/loctvl842/monokai-pro.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -171,9 +165,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/kramer/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -185,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["simple-dark"] = {
+    loaded = true,
+    path = "/Users/kramer/.local/share/nvim/site/pack/packer/start/simple-dark",
+    url = "https://github.com/tek256/simple-dark"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -204,10 +202,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: monokai-pro.nvim
-time([[Config for monokai-pro.nvim]], true)
-try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vfilter\fmachine\nsetup\16monokai-pro\frequire\0", "config", "monokai-pro.nvim")
-time([[Config for monokai-pro.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

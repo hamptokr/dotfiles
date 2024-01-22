@@ -104,6 +104,7 @@ source $HOME/.zsh_profile
 
 alias vim="nvim"
 alias ls="exa"
+alias md="glow"
 
 # Enable VI
 bindkey -v
@@ -115,7 +116,10 @@ export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
 
 # pnpm
 export PNPM_HOME="/Users/kramer/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"

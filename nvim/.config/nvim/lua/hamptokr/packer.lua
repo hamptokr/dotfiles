@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	use("nvim-tree/nvim-web-devicons")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("theprimeagen/harpoon")
 	use("mbbill/undotree")
@@ -54,10 +55,5 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use({
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("monokai-pro").setup({ opts = { filter = "machine" } })
-		end,
-	})
+	use("tek256/simple-dark")
 end)
