@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_profile
 
 alias vim="nvim"
-alias ls="exa"
+alias ls="eza"
 alias md="glow"
 
 # Enable VI

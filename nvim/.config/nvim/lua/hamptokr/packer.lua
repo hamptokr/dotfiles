@@ -56,4 +56,5 @@ return require("packer").startup(function(use)
 	})
 
 	use("tek256/simple-dark")
+	use("rebelot/kanagawa.nvim")
 end)
