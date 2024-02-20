@@ -145,7 +145,8 @@ export PATH="/Users/kramer/oss/elixir-ls/release:$PATH"
 
 [ -f "/Users/kramer/.ghcup/env" ] && source "/Users/kramer/.ghcup/env" # ghcup-env
 
-eval "$(~/bin/rtx activate zsh)"
+# Activate mise
+eval "$(~/.local/bin/mise activate zsh)"
 
 # bun completions
 [ -s "/Users/kramer/.bun/_bun" ] && source "/Users/kramer/.bun/_bun"
