@@ -109,11 +109,6 @@ alias md="glow"
 # Enable VI
 bindkey -v
 
-export PATH="$PATH:/usr/local/protobuf/bin"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$(go env GOPATH)/bin"
-export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
-
 # pnpm
 export PNPM_HOME="/Users/kramer/Library/pnpm"
 case ":$PATH:" in
@@ -148,6 +143,10 @@ export PATH="/Users/kramer/oss/elixir-ls/release:$PATH"
 # Activate mise
 eval "$(~/.local/bin/mise activate zsh)"
 
+export PATH="$PATH:/usr/local/protobuf/bin"
+export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
+source "/Users/kramer/dotfiles/set-go-env.zsh"
+
 # bun completions
 [ -s "/Users/kramer/.bun/_bun" ] && source "/Users/kramer/.bun/_bun"
 
@@ -155,3 +154,4 @@ eval "$(~/.local/bin/mise activate zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
