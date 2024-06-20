@@ -105,6 +105,8 @@ source $HOME/.zsh_profile
 alias vim="nvim"
 alias ls="eza"
 alias md="glow"
+alias ar="php artisan"
+alias cd="z"
 
 # Enable VI
 bindkey -v
@@ -170,3 +172,8 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/kramer/Library/Application Support/Herd/
 
 # Herd injected PHP binary.
 export PATH="/Users/kramer/Library/Application Support/Herd/bin/":$PATH
+
+# sst
+export PATH=/Users/kramer/.sst/bin:$PATH
+
+eval "$(zoxide init zsh)"
