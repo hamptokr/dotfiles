@@ -24,20 +24,25 @@
   "inlay_hints": {
     "enabled": true
   },
-  "elixir": {
-    "lsp": {
-      "local": {
-        "path": "/Users/kramer/oss/lexical/_build/dev/package/lexical/bin/start_lexical.sh",
-        "arguments": [""]
-      }
+  "tab_bar": {
+    "show": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "languages": {
+    "Elixir": {
+      "language_servers": ["lexical", "!elixir-ls"]
+    },
+    "HEEX": {
+      "language_servers": ["lexical", "!elixir-ls"]
     }
   },
-  "zig": {
-    "lsp": {
-      "local": {
-        "path": "/Users/kramer/oss/zls/zig-out/bin/zls",
-        "arguments": [""]
-      }
+  "lsp": {
+    "lexical": {
+      "path": "/Users/kramer/oss/lexical/_build/dev/package/lexical/bin/start_lexical.sh",
+      "arguments": []
     }
   }
 }
