@@ -95,6 +95,12 @@ vim.g.maplocalleader = ' '
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.cmd [[
+syntax enable
+let g:dracula_colorterm = 0
+colorscheme dracula_pro
+]]
+
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -152,9 +158,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
--- Highlight col 80
-vim.opt.colorcolumn = '80'
 
 -- Configure netrw appearance
 vim.g.netrw_browse_split = 0
@@ -222,6 +225,14 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
+
+local function get_zls_path()
+  if vim.loop.os_uname().sysname == 'Darwin' then
+    return '/Users/kramer/oss/zls/zig-out/bin/zls'
+  else
+    return '/home/kramer/oss/zls/zig-out/bin/zls'
+  end
+end
 
 -- [[ Configure and install plugins ]]
 --
@@ -555,7 +566,7 @@ require('lazy').setup {
         -- pyright = {},
         rust_analyzer = {},
         zls = {
-          cmd = { '/Users/kramer/oss/zls/zig-out/bin/zls' },
+          cmd = { get_zls_path() },
         },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

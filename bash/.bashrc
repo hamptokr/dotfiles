@@ -166,15 +166,14 @@ export PNPM_HOME="/home/kramer/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
-
 KERL_BUILD_DOCS=yes
 KERL_INSTALL_HTMLDOCS=yes
 KERL_INSTALL_MANPAGES=yes
 
 # snap
 export PATH="/snap/bin:$PATH"
+
+eval "$(~/.local/bin/mise activate bash)"
 
 # Start tmux at startup
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
