@@ -158,6 +158,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/Applications/PhpStorm.app/Contents/MacOS:$PATH"
+export PATH="$(brew --prefix)/opt/sqlite/bin:${PATH}"
 
 
 # Herd injected NVM configuration
@@ -175,5 +176,8 @@ export PATH="/Users/kramer/Library/Application Support/Herd/bin/":$PATH
 
 # sst
 export PATH=/Users/kramer/.sst/bin:$PATH
+
+# Needed for zed
+export PATH=/Users/kramer/oss/lexical/_build/dev/package/lexical/bin:$PATH
 
 eval "$(zoxide init zsh)"
