@@ -2,8 +2,8 @@ local wezterm = require("wezterm")
 
 return {
 	font = wezterm.font("Iosevka Nerd Font Mono"),
-	font_size = 18,
-	color_scheme = "Dracula Pro",
+	font_size = 20,
+	color_scheme = "Tokyo Night",
 	hide_tab_bar_if_only_one_tab = true,
 	window_padding = {
 		left = 3,

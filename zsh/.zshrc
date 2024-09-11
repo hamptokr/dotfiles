@@ -181,3 +181,7 @@ export PATH=/Users/kramer/.sst/bin:$PATH
 export PATH=/Users/kramer/oss/lexical/_build/dev/package/lexical/bin:$PATH
 
 eval "$(zoxide init zsh)"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/kramer/Library/Application Support/Herd/config/php/84/"

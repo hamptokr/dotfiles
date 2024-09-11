@@ -7,12 +7,19 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
   "features": {
     "copilot": false
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
-  "theme": "Catppuccin Mocha",
+  "theme": "Gleam Dark",
   "buffer_font_size": 18,
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "project_panel": {
@@ -37,6 +44,13 @@
     },
     "HEEX": {
       "language_servers": ["lexical", "!elixir-ls"]
+    },
+    "lsp": {
+      "zls": {
+        "binary": {
+          "path": "/Users/kramer/oss/zls/zig-out/bin/zls"
+        }
+      }
     }
   }
 }

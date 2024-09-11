@@ -95,12 +95,6 @@ vim.g.maplocalleader = ' '
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.cmd [[
-syntax enable
-let g:dracula_colorterm = 0
-colorscheme dracula_pro
-]]
-
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
