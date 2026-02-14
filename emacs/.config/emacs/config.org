@@ -8,7 +8,9 @@
 - [[#priority-0][Priority 0]]
   - [[#package-manager---elpaca][Package Manager - Elpaca]]
   - [[#load-evil-mode][Load Evil Mode]]
+  - [[#theme][Theme]]
   - [[#general-keybindings][General Keybindings]]
+  - [[#ido][IDO]]
 - [[#buffer-move][BUFFER MOVE]]
 - [[#ivy-counsel][IVY (COUNSEL)]]
 - [[#all-the-icons][ALL THE ICONS]]
@@ -17,6 +19,7 @@
 - [[#gui-tweaks][GUI TWEAKS]]
   - [[#disable-menubar-toolbars-and-scrollbars][Disable Menubar, Toolbars and Scrollbars]]
   - [[#display-line-numbers-and-truncated-lines][Display Line Numbers and Truncated Lines]]
+  - [[#splash--misc][Splash & Misc]]
 - [[#org-mode][ORG MODE]]
   - [[#enabling-table-of-contents][Enabling Table of Contents]]
   - [[#enabling-org-bullets][Enabling Org Bullets]]
@@ -25,6 +28,8 @@
 - [[#shells-and-terminals][SHELLS AND TERMINALS]]
 - [[#sudo-edit][SUDO EDIT]]
 - [[#which-key][WHICH-KEY]]
+- [[#language-support][LANGUAGE SUPPORT]]
+  - [[#odin][Odin]]
 
 * Priority 0
 ** Package Manager - Elpaca
@@ -102,7 +107,7 @@
     :ensure t
     :after evil
     :config
-    (setq evil-collection-mode-list '(dashboard dired ibuffer))
+    (setq evil-collection-mode-list '(dashboard dired ibuffer compile))
     (evil-collection-init))
   (use-package evil-tutor :ensure t)
 
@@ -112,6 +117,14 @@
   (use-package emacs :ensure nil :config (setq ring-bell-function #'ignore))
 #+end_src
 
+** Theme
+
+#+begin_src emacs-lisp
+  (use-package gruber-darker-theme 
+  :ensure t
+  :config
+  (load-theme 'gruber-darker t))
+#+end_src
 
 ** General Keybindings
 
@@ -163,7 +176,21 @@
       "w K" '(buf-move-up :wk "Buffer move up")
       "w L" '(buf-move-right :wk "Buffer move right")
       )
+    
+      (general-define-key :states 'normal
+  			  "H" 'previous-buffer
+  			  "L" 'next-buffer)
     )
+#+end_src
+
+** IDO
+
+#+begin_src emacs-lisp
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (setq ido-create-new-buffer 'always)
+  (setq-default confirm-nonexistent-file-or-buffer nil)
+  (ido-mode 1)
 #+end_src
 
 * BUFFER MOVE
@@ -329,8 +356,15 @@ Make Emacs look a little better.
 #+begin_src emacs-lisp
   (global-display-line-numbers-mode 1)
   (setq display-line-numbers-type 'relative)
-  (visual-line-mode 0)
+  (visual-line-mode -1)
   (global-visual-line-mode t)
+#+end_src
+
+** Splash & Misc
+
+#+begin_src emacs-lisp
+  (setq-default inhibit-splash-screen t
+                make-backup-files nil)
 #+end_src
 
 * ORG MODE
@@ -340,6 +374,7 @@ Make Emacs look a little better.
     :ensure t
     :commands toc-org-enable
     :init (add-hook 'org-mode-hook 'toc-org-enable))
+  (setq org-return-follows-link t)
 #+end_src
 
 ** Enabling Org Bullets
@@ -355,7 +390,7 @@ Nice bullets rather than asterisks.
 Get rid of auto-indenting shenanigans
 
 #+begin_src emacs-lisp
-  (electric-indent-mode 0)
+  (electric-indent-mode -1)
 #+end_src
 
 ** Tempo
@@ -398,4 +433,18 @@ Ability to open files as root if we forgot
   	which-key-max-description-length 25
   	which-key-allow-imprecise-window-fit t
   	which-key-separator "🡒" ))
+#+end_src
+
+* LANGUAGE SUPPORT
+
+** Odin
+#+begin_src emacs-lisp
+  (use-package odin-ts-mode
+    :ensure (:host github :repo "Sampie159/odin-ts-mode")
+    :mode "\\.odin\\'")
+
+  (add-to-list 'auto-mode-alist '("\\.odin\\'" . odin-ts-mode))
+  (add-to-list 'compilation-error-regexp-alist-alist
+              '(odin "^\\(.*\\.odin\\)(\\([0-9]+\\):\\([0-9]+\\))" 1 2 3))
+  (add-to-list 'compilation-error-regexp-alist 'odin)
 #+end_src
